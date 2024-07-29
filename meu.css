@@ -1,0 +1,89 @@
+.cima{
+background-color: rgb(255, 255, 255);
+color: rgb(255, 255, 255);
+}
+.nome{
+    text-align: center;
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    
+}
+.santos{
+    
+    border-radius: 10px;
+   
+}
+
+.texto{
+
+    color: rgb(255, 255, 255);
+}
+
+.texto2{
+    color:  rgb(255, 255, 255);
+}
+
+
+.bemvindo{
+    font-size: 50px;
+    text-align: center;
+}
+.santos2{
+    max-width: 35px;
+   
+}
+.teste{
+    font-size: 25px;
+}
+.imagem{
+    max-height: 200px;
+    min-height: 200px;
+    
+    
+}
+
+.fundover{
+    background-color: rgb(12, 64, 3);
+}
+
+.fundomar{
+    background-color: rgb(94,30, 8);
+}
+
+.text-muuted {
+    --bs-text-opacity: 1;
+    color: rgb(255, 255, 255) var(--bs-text-opacity) !important;
+}
+
+.pyy-5{
+    padding-top: 3rem!important;
+}
+
+.roow{
+   
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.texto3{
+
+    color: rgb(0, 0, 0);
+    text-align: center;
+
+}
+
+.texto4{
+    color: black;
+}
+.fundobran{
+    background-color: white;
+}
+
+.pyyy-5{
+    padding-top: 4rem!important;
+    padding-bottom: 4rem!important;
+}
