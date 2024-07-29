@@ -1,0 +1,32 @@
+.cima{
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+}
+.nome{
+    text-align: center;
+    color:rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    
+}
+.santos{
+    
+    border-radius: 10px;
+   
+}
+
+
+.bemvindo{
+    font-size: 50px;
+    text-align: center;
+}
+.santos2{
+    width: 2%;
+   
+}
+.teste{
+    font-size: 25px;
+}
+.imagem{
+    max-height: 470px;
+    min-height: 200px;
+}
