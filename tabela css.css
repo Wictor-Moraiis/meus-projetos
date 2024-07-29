@@ -1,0 +1,78 @@
+table{
+    border: 2px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+.centro{
+    text-align: center;
+}
+section{
+    margin-top: -70vh;
+    text-align: right;
+    margin-right: -80px;
+    font-size: 20px;
+}
+.diagonal{
+    transform: rotate(30deg);
+}
+.artes{
+background-color:red ;
+}
+.pw{
+    background-color:#ff2190;
+}
+.bd{
+    background-color: yellow;
+}
+.dd{
+    background-color: violet;
+}
+.lic{
+    background-color: green;
+}
+.ecn{
+    background-color: gray;
+}
+.edf{
+    background-color: blue;
+}
+.fi{
+    background-color: orange;
+}
+.tpa{
+    background-color: firebrick;
+}
+.mat{
+    background-color: blanchedalmond;
+}
+.emat{
+    background-color: cyan;
+}
+.aps{
+    background-color: greenyellow;
+}
+.historia{
+    background-color: brown;
+}
+.quimica{
+    background-color: darkgoldenrod;
+}
+.fisica{
+    background-color: gold;
+}
+.ingles{
+    background-color: darkgreen;
+}
+.port{
+    background-color: cornflowerblue;
+}
+.pratemp{
+    background-color: darkslategray;
+}
+.janela{
+    background-color: rgb(0, 255, 136) ;
+}
+.grad{
+    background-image: linear-gradient(to right, red, green, yellow, blue);
+ 
+}
