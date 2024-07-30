@@ -1,0 +1,28 @@
+#oioi{
+ width: 50vw;
+    background-color: white;
+    margin-left: 48vw;
+    height: 97vh;
+    margin-top: 10vh
+}
+#limpar{
+    background-color: red;
+}
+#entrar{
+    background-color: blue;
+}
+#img{
+    background-image: url(https://source.unsplash.com/800x600?pc);
+    width: 35vw;
+    height: 55vh;
+    margin-left: -77vh;
+    margin-top: -93vh;
+    background-size: cover;
+}
+h3{
+    font-weight: lighter;
+    font-size: 18px;
+}
+#entrar{
+    margin-left: 35vh;
+}
