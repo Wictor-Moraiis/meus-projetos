@@ -1,0 +1,64 @@
+create database chave_estrangeira;
+use chave_estrangeira
+
+CREATE TABLE aluno(
+aluno_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(30) NOT NULL);
+
+
+CREATE TABLE cursos(
+curso_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(30) NOT NULL);
+
+CREATE TABLE notas(
+data DATE NOT NULL,
+curso_id INT NOT NULL,
+aluno_id INT NOT NULL,
+nota DOUBLE NOT NULL,
+PRIMARY KEY(data),
+FOREIGN KEY (aluno_id) REFERENCES aluno(aluno_id) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (curso_id) REFERENCES cursos(curso_id) ON DELETE CASCADE ON UPDATE CASCADE);
+
+insert into aluno
+values(default,
+'João Vitor Gomes Fernandes');
+
+insert into aluno
+values(default,
+'Pedro almeida');
+
+insert into aluno
+values(default,
+'Gustavo Sanchez');
+
+insert into cursos
+values(default,
+'Desenvolvimento de Sistemas');
+
+insert into cursos
+values(default,
+'Engenharia de Software');
+
+insert into cursos
+values(default,
+'Engenharia da Computação');
+
+insert into notas
+values('2012-12-23',
+'1',
+'1',
+'9.5');
+
+insert into notas
+values('2023-08-14',
+'2',
+'2',
+'4');
+
+insert into notas
+values('2018-07-10',
+'3',
+'3',
+'7');
+
+update aluno set aluno_id=10 where nome='João Vitor Gomes Fernandes';

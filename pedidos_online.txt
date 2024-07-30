@@ -1,0 +1,79 @@
+create database pedidos_online;
+
+use pedidos_online;
+
+create table clientes(
+id_Cliente int not null auto_increment primary key,
+cli_nome varchar(100),
+cli_email varchar(100),
+cli_senha varchar(100),
+cli_rua varchar (100),
+cli_bairro varchar (100),
+cli_cep int (8),
+cli_estado varchar (2));
+
+create table pedidos(
+id_Pedido int not null auto_increment primary key,
+ped_data date,
+id_Cliente int,
+ped_status varchar (100),
+ped_sessao varchar (100),
+foreign key (id_Cliente) references clientes(id_Cliente) on delete cascade on update cascade);
+
+create table categorias(
+id_Categoria int not null auto_increment primary key,
+cat_categoria varchar (100),
+cat_nome varchar (100));
+
+create table produtos(
+id_Produto int not null auto_increment primary key,
+id_Categoria int,
+prod_produto varchar (100),
+prod_preco double (10,2),
+prod_quant int (10),
+prod_desc varchar (100),
+prod_foto blob,
+foreign key (id_Categoria) references categorias(id_Categoria) on delete cascade on update cascade);
+
+create table pedidoItens(
+id_Item int not null auto_increment primary key,
+id_Pedido int,
+id_Produto int,
+pedit_prod varchar (100),
+pedit_quant int (10),
+pedit_valor double (10,2),
+pedit_subtotal double (10,2),
+foreign key (id_Produto) references produtos(id_Produto) on delete cascade on update cascade,
+foreign key (id_Pedido) references pedidos(id_Pedido) on delete cascade on update cascade);
+
+create table usuarios(
+id_Usuario int not null auto_increment primary key,
+user_usuario varchar (100),
+user_senha varchar (100));
+
+insert into clientes (cli_nome, cli_email, cli_senha, cli_rua, cli_bairro, cli_cep, cli_estado) values
+('Gustavo Rocha', 'gugugugoga@gmail.com', '932176aa', 'rua das flores', 'jardim mirna', '0423060', 'SP'),
+('Pedro Machado', 'machadro@gmail.com', '4756381bl', 'Av. marilda', 'jardim rochoso', '04837641', 'RJ');
+
+insert into pedidos (ped_data, id_Cliente, ped_status, ped_sessao) values
+('2021/01/23', '1', 'Entregue ao destinatario', 'Sessao 4', Eletronicos'),
+('2023/10/11', '2', 'Pacote perdido durante a entrega', 'Sessao 10', 'Acessorios');
+
+insert into categorias (cat_categoria, cat_nome) values
+('4', 'Eletronicos'),
+('10', 'Acessorios');
+
+insert into produtos (id_Categoria, prod_produto, prod_preco, prod_quant, prod_desc, prod_foto) values
+('1', 'Fone_bluetooth', '359.99' '100', 'Fone bluetooth JBL TUNE FLEX', null),
+('2', 'Capinha_silicone', '25.99' '1000', 'Capinha de silicone preta lisa para Redmi Note 12 4G', null);
+
+insert into pedidoItens (id_Pedido, id_Produto, pedit_prod, pedit_quant, pedit_valor, pedit_subtotal) values
+('1', '1', 'Fone Bluetooth', '5', '1779.95', '1750'),
+('2', '2', 'Capinha_silicone', '100', '2599', '2550');
+
+insert into usuarios (user_usuario, user_senha) values
+('Gu_rocha_a', '932176aa'),
+('Ma_pedro', '4756381bl');
+
+
+

@@ -1,0 +1,45 @@
+mysql -u root -p 
+
+create database transportadora;
+
+use transportadora;
+
+create table Aviao(
+
+Avi_matri int(9) not null auto_increment,
+Avi_nome varchar(255),
+Avi_numlugar int(4),
+Avi_marca varchar(255),
+Avi_auton int(10),
+primary key (Avi_matri));
+
+create table Piloto(
+
+Pil_CPF int(11) not null auto_increment,
+Pil_RG int(9) not null,
+Pil_cod int(10) not null,
+Pil_datanasc date,
+Pil_nome varchar(255),
+Pil_sobrenome varchar(255),
+Pil_ultnome varchar(255),
+Pil_tel1 int(11) not null,
+Pil_tel2 int(11) not null,
+Pil_email1 varchar(255) not null,
+Pil_email2 varchar(255) not null, 
+Pil_CEP int(8),
+Pil_bairro varchar(255),
+Pil_rua varchar(255),
+Pil_numcasa int(4),
+primary key (Pil_CPF));
+
+create table Voo(
+
+Voo_cod varchar(10) not null,
+Voo_data date,
+Voo_hora time,
+Voo_localpart varchar(255),
+Voo_localdest varchar(255),
+Pil_CPF int(11),
+Avi_matri int(9),
+primary key (Voo_cod));
+

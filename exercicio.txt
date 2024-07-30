@@ -1,0 +1,75 @@
+create database if not exists loja_online;
+
+use loja_online;
+
+create table if not exists clientes(
+id int auto_increment primary key,
+nome varchar(100),
+email varchar(100),
+endereco varchar(255));
+
+create table if not exists produtos(
+id int auto_increment primary key,
+nome varchar(100),
+preco decimal(10,2),
+quantidade int);
+
+create table if not exists pedidos(
+id int auto_increment primary key,
+cliente_id int,
+produto_id int,
+quantidade int,
+data_pedido date,
+foreign key (cliente_id) references clientes(id) on delete cascade on update cascade,
+foreign key (produto_id) references produtos(id) on delete cascade on update cascade);
+
+insert into clientes (nome, email, endereco) values
+('Ana Oliveira', 'ana@gmail.com', 'Rua Principal, 123'),
+('Carlos Santos', 'carlos@hotmail.com', 'Av. Central, 456'),
+('Maria Silva', 'maria@yahoo.com', 'Travessa das Flores, 789');
+
+insert into produtos (nome, preco, quantidade) values
+('Camiseta Branca', 29.99, 50),
+('Calça Jeans', 59.99, 30),
+('Tênis Esportivo', 79.99, 20),
+('Mochila Escolar', 39.99, 40);
+
+insert into pedidos (cliente_id, produto_id, quantidade, data_pedido) values
+(1, 1, 2, '2024-04-10'),
+(1, 2, 1, '2024-04-11'),
+(2, 3, 1, '2024-04-12'),
+(3, 2, 3, '2024-04-13'),
+(3, 4, 2, '2024-04-14');
+
+update clientes set nome = 'João Silva' where id = 1;
+
+update produtos set preco = '32.99' where id = 1;
+update produtos set preco = '65.99' where id = 2;
+update produtos set preco = '87.99' where id = 3;
+update produtos set preco = '43.99' where id = 4;
+
+update produtos set quantidade = 15 where id = 3;
+
+update clientes set endereco = 'Rua nova, 123' where id = 2;
+
+update pedidos set data_pedido = '2024-04-25' where id = 5;
+
+update produtos set quantidade = 70 where id = 1;
+
+update produtos set nome = 'Notebook Dell' where id = 4;
+
+update produtos set preco = '49.99' where id = 2;
+
+update produtos set quantidade = 68 where id = 1;
+update produtos set quantidade = 28 where id = 2;
+update produtos set quantidade = 13 where id = 3;
+update produtos set quantidade = 38 where id = 4;
+
+update clientes set email = 'maria@gmail.com' where id = 3;
+
+update clientes set id = 10 where nome = 'Maria Silva';
+
+
+
+on delete cascade on update cascade
+on delete cascade on update cascade

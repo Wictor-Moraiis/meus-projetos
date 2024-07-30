@@ -1,0 +1,266 @@
+mysql -u root -p 
+
+create database comercial;
+
+use comercial;
+
+create table comclien(
+
+n_numeclien int(11) not null auto_increment,
+c_codclien varchar(10),
+c_nomeclien varchar(100),
+c_razaclien varchar(100),
+d_dataclien date,
+c_cnpjclien varchar(20),
+c_foneclien varchar(20),
+c_cidaclien varchar(20),
+c_estaclien varchar(20),
+primary key (n_numeclien));
+
+
+create table comforne(
+
+n_numeforne int(11) not null auto_increment,
+c_codforne varchar(10),
+c_nomeforne varchar(100),
+c_razaforne varchar(100),
+c_foneforne varchar(20),
+primary key(n_numeforne));
+
+create table comprodu(
+
+n_numeprodu int(11) not null auto_increment,
+c_codprodu varchar(20),
+c_descprodu varchar(100),
+c_valoprodu float(10,2),
+c_situprodu varchar(1),
+n_numeforne int(11),
+primary key(n_numeprodu));
+
+create table comvenda(
+
+n_numevenda int(11) not null auto_increment,
+c_codvenda varchar(20),
+n_numeclien int(11),
+n_numeforne int(11),
+n_valovenda float(10,2),
+n_descvenda float(10,2),
+n_totavenda float(10,2),
+d_datavenda date,
+n_comvenda float(10,2),
+n_numevende int(11),
+primary key(n_numevenda));
+
+create table comivenda(
+
+n_numeivenda int(11) not null auto_increment,
+n_numevenda int(11),
+n_numeprodu int(11),
+n_valoivenda float(10,2),
+n_qtdeivenda int(11),
+n_descivenda float(10,2),
+primary key(n_numeivenda));
+
+create table comvende(
+
+n_numevende int(11) not null auto_increment,
+c_codvende varchar(10),
+c_nomevende varchar(50),
+c_razavende varchar(50),
+c_fonvende varchar(50),
+n_porcvende float(10,2),
+primary key(n_numevende));
+
+
+
+insert into comclien
+
+values (default,
+'0001',
+'AARONSON',
+'AARONSON FURNITURE LTDA',
+'2015-02-17',
+'17.807.928/0001-85',
+'(21) 8167-6584',
+'QUEIMADOS',
+'RJ');
+
+insert into comclien
+
+values (default,
+'0002',
+'ATACADÃO',
+'ATACADÃO LTDA',
+'2023-12-11',
+'15.987.958/0004-15',
+'(11) 2187-1235',
+'SÃO PAULO',
+'SP');
+
+insert into comclien
+
+values (default,
+'0003',
+'CERCADÃO',
+'CERCADÃO LTDA',
+'2021-08-21',
+'14.036.136/0001-71',
+'(13) 2427-4174',
+'ILHA COMPRIDA',
+'SP');
+
+insert into comforne
+
+values (default,
+'0001',
+'JMPAPER',
+'JMPAPERS LTDA',
+'(12) 3241-7498');
+
+insert into comforne
+
+values (default,
+'0002',
+'GDCOND',
+'GD CONDIMENTS LTDA',
+'(18) 9381-1542');
+
+
+insert into comforne
+
+values (default,
+'0003',
+'MNCONG',
+'MN CONGELADOS LTDA',
+'(21) 7528-3810');
+
+insert into comprodu
+
+values (default,
+'0001',
+'Guardanapo de restaurante',
+'10.9',
+'1',
+'0001');
+
+insert into comprodu
+
+values (default,
+'0002',
+'maionese de restaurante 20L',
+'241.1',
+'1',
+'0002');
+
+insert into comprodu
+
+values (default,
+'0003',
+'Picanha congelada 10kg',
+'690.7',
+'1',
+'0003');
+
+insert into comvenda
+
+values (default,
+'0001',
+'0001',
+'0001',
+'1010.9',
+'10.9',
+'1010.9',
+'2020-03-23',
+'48.2',
+'0001');
+
+insert into comvenda
+
+values (default,
+'0002',
+'0002',
+'0002',
+'19529.1',
+'241.1',
+'19529.1',
+'2019-11-01',
+'927.63',
+'0002');
+
+insert into comvenda
+
+values (default,
+'0003',
+'0003',
+'0003',
+'52493.2',
+'690.7',
+'52493.2',
+'2024-07-12',
+'2493.2',
+'0003');
+
+insert into comivenda
+
+values (default,
+'0001',
+'0001',
+'1010.9',
+'10',
+'1010.9');
+
+insert into comivenda
+
+values (default,
+'0002',
+'0002',
+'19529.1',
+'81',
+'19529.1');
+
+insert into comivenda
+
+values (default,
+'0003',
+'0003',
+'52493.2',
+'76',
+'52493.2');
+
+insert into comvende
+
+values (default,
+'0001',
+'Geraldo das Neves',
+'Geraldo ',
+'(82) 9104-3002',
+'4.75');
+
+insert into comvende
+
+values (default,
+'0002',
+'Paulo Moura',
+'Paulo',
+'(95) 8232-1670',
+'4.75');
+
+insert into comvende
+
+values (default,
+'0003',
+'Laura Silveira',
+'Laura',
+'(82) 9429-8971',
+'4.75');
+
+select *from comclien;
+select *from comforne;
+select *from comprodu;
+select *from comvenda;
+select *from comivenda;
+select *from comvende;
+
+
+
+

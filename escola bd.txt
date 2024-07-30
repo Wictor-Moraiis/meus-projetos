@@ -1,0 +1,56 @@
+mysql -u root -p
+
+create database escola;
+
+use escola;
+
+create table alunoo(
+
+aluno_nome varchar(100),
+aluno_datanasc date,
+aluno_tel1 integer(11),
+aluno_tel2 integer(11),
+aluno_tel3 integer(11),
+aluno_email1 varchar(100),
+curso_id int(11));
+
+alter table alunoo add column aluno_email integer(10);
+alter table alunoo modify column aluno_email varchar(100);
+alter table alunoo change aluno_email aluno_email2 varchar(100);
+alter table alunoo drop column aluno_tel3;
+alter table alunoo rename aluno;
+alter table aluno add aluno_id int(11) unsigned not null auto_increment, add primary key (aluno_id);
+
+
+create table cursoo(
+
+curso_hora time(4),
+curso_nome varchar(100),
+curso_depart varchar(100),
+curso_data date);
+
+
+alter table cursoo add column curso_grad integer(10);
+alter table cursoo modify column curso_grad varchar(100);
+alter table cursoo change curso_grad curso_grade varchar(100);
+alter table cursoo drop column curso_data;
+alter table cursoo rename curso;
+alter table curso add curso_id int(11) unsigned not null auto_increment, add primary key (curso_id);
+
+create table notaa(
+
+nota_nota float(2,2),
+aluno_id int(11),
+curso_id int(11));
+
+
+alter table notaa add column nota_alunoo integer(10);
+alter table notaa modify column nota_alunoo float(2,2);
+alter table notaa change nota_alunoo nota_aluno float(2,2);
+alter table notaa drop column nota_aluno;
+alter table notaa rename nota;
+alter table nota add nota_id int(11) unsigned not null auto_increment, add primary key (nota_id);
+
+
+
+
